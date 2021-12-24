@@ -45,7 +45,7 @@ const Property = ({
               {isVerified && <GoVerified />}
             </Box>
             <Text fontWeight="bold" fontSize="lg">
-              USD {millify(price / 4)}
+              AED {millify(price)}
               {rentFrequency && ` / ${rentFrequency}`}
             </Text>
           </Flex>
