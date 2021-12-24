@@ -107,7 +107,7 @@ function PropertyDetails({
             </Text>
             <Flex flexWrap="wrap">
               {amenities.map((item) =>
-                item.amenities.map((amenitiy) => (
+                item.amenities.map((amenity) => (
                   <Text
                     fontWeight="bold"
                     color="green.500"
@@ -115,9 +115,9 @@ function PropertyDetails({
                     m="1"
                     p="2"
                     borderRadius="5"
-                    key={amenitiy.text}
+                    key={amenity.text}
                   >
-                    {amenitiy.text}
+                    {amenity.text}
                   </Text>
                 ))
               )}
