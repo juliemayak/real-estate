@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { Box } from '@chakra-ui/react';
 import Nav from './Nav';
+import Footer from './Footer';
 
 function Layout({ children }) {
   return (
@@ -13,7 +14,9 @@ function Layout({ children }) {
           <Nav />
         </header>
         <main>{children}</main>
-        <footer>Footer</footer>
+        <footer>
+          <Footer />
+        </footer>
       </Box>
     </>
   );
