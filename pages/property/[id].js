@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import { Button, Collapse } from '@chakra-ui/react';
 import { Box, Flex, Spacer, Text } from '@chakra-ui/layout';
 import { Avatar } from '@chakra-ui/avatar';
 import { FaBed, FaBath } from 'react-icons/fa';
@@ -26,6 +28,9 @@ function PropertyDetails({
     photos
   }
 }) {
+  const [show, setShow] = useState(false);
+  const handleToggle = () => setShow(!show);
+
   return (
     <Box maxWidth="1000px" margin="auto" p="4">
       {photos && <ImageScrollbar data={photos} />}
@@ -59,13 +64,16 @@ function PropertyDetails({
             {title}
           </Text>
           <Text fontSize="lg" marginBottom="2" fontWeight="bold">
-            Learn More below:
+            Learn details below:
           </Text>
-          <Text lineHeight="2" color="gray.600">
+          <Collapse lineHeight="2" color="gray.600" startingHeight={90} in={show}>
             {description}
-          </Text>
+          </Collapse>
+          <Button size="sm" onClick={handleToggle} mt="15px">
+            Show {show ? 'Less' : 'More'}
+          </Button>
         </Box>
-        <Flex flexWrap="wrap" textTransform="uppercase" justifyContent="space-between">
+        <Flex flexWrap="wrap" textTransform="uppercase" justifyContent="space-between" mt="10px">
           <Flex
             justifyContent="space-between"
             w="400px"

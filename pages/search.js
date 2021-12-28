@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import { Flex, Box, Text, Icon } from '@chakra-ui/react';
+import { Flex, Box, Text, Icon, Collapse } from '@chakra-ui/react';
 import { BsFilter } from 'react-icons/bs';
 
 import Property from '../components/Property';
@@ -25,12 +25,13 @@ function Search({ properties }) {
         justifyContent="center"
         alignItems="center"
         onClick={() => setSearchFilters(!searchFilters)}
-        // onClick={() => setSearchFilters((prevFilters) => !prevFilters)}
       >
         <Text>Search Property By Filters</Text>
         <Icon paddingLeft="2" w="7" as={BsFilter} />
       </Flex>
-      {searchFilters && <SearchFilters />}
+      <Collapse in={searchFilters} animateOpacity>
+        <SearchFilters />
+      </Collapse>
       <Text p="4" fontWeight="bold" fontSize="2xl">
         Properties {router.query.purpose}
       </Text>

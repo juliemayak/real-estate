@@ -29,13 +29,17 @@ const Property = ({
       paddingTop="0"
       justifyContent="flex-start"
       cursor="pointer"
+      _hover={{
+        transform: 'scale(1.05)'
+      }}
+      transition="all 0.3s ease-in-out"
     >
-      <Box>
+      <Box rounded="lg" overflow="hidden" width={350} height={210} position="relative">
         <Image
           src={coverPhoto ? coverPhoto.url : DefaultImage}
           alt="house"
-          width={400}
-          height={260}
+          layout="fill"
+          objectFit="cover"
         />
       </Box>
       <Box w="full">
