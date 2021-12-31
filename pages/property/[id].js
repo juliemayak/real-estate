@@ -41,7 +41,7 @@ function PropertyDetails({
               {isVerified && <GoVerified />}
             </Box>
             <Text fontWeight="bold" fontSize="lg">
-              USD {millify(price / 4)}
+              AED {millify(price / 4)}
               {rentFrequency && ` / ${rentFrequency}`}
             </Text>
           </Flex>
